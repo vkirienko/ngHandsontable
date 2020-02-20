@@ -4,3 +4,7 @@
 /node_modules
 /bower_components
 dev.html
+*.sqlite
+/.vs/ngHandsontable/config/applicationhost.config
+/.vs/ProjectSettings.json
+/package-lock.json

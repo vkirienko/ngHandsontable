@@ -5,7 +5,7 @@
  * Copyright 2015 Handsoncode sp. z o.o. <hello@handsontable.com>
  * Licensed under the MIT license.
  * https://github.com/handsontable/ngHandsontable
- * Date: Wed Oct 26 2016 10:00:05 GMT+0200 (CEST)
+ * Date: Wed Feb 19 2020 21:32:23 GMT-0500 (Eastern Standard Time)
 */
 
 if (document.all && !document.addEventListener) { // IE 8 and lower
@@ -22,7 +22,7 @@ angular.module('ngHandsontable', [
   ]);
 
 Handsontable.hooks.add('afterContextMenuShow', function() {
-  Handsontable.eventManager.isHotTableEnv = false;
+  Handsontable.EventManager.isHotTableEnv = false;
 });
 
 (function() {
@@ -30,7 +30,7 @@ Handsontable.hooks.add('afterContextMenuShow', function() {
     return {
       parseAutoComplete: function(column, dataSet, propertyOnly) {
         column.source = function(query, process) {
-          var row = this.instance.getSelected()[0];
+          var row = this.instance.getSelectedLast()[0];
           var source = [];
           var data = dataSet[row];
 
